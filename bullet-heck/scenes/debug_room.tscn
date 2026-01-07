@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn21qxytd6tf7"]
+
+[ext_resource type="PackedScene" uid="uid://b2jpu5e5wn8eb" path="res://scenes/boss_skeleton.tscn" id="1_kxprw"]
+[ext_resource type="PackedScene" uid="uid://b6ure5m8acg3e" path="res://scenes/player.tscn" id="2_aifrh"]
+
+[node name="debugRoom" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("2_aifrh")]
+position = Vector2(778, 420)
+
+[node name="bossSkeleton" parent="." instance=ExtResource("1_kxprw")]
+position = Vector2(559, 305)

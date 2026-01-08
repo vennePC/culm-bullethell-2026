@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://xkosaeeqvpt5"]
+
+[ext_resource type="Script" uid="uid://bj84h73a42wf1" path="res://scripts/bullet.gd" id="1_y25gk"]
+[ext_resource type="Texture2D" uid="uid://bpxh3kn6lf41g" path="res://assets/sprites/32x32px/10.png" id="2_tamys"]
+[ext_resource type="Texture2D" uid="uid://dbkroev8b2xih" path="res://assets/sprites/32x32px/11.png" id="3_26lx3"]
+[ext_resource type="Texture2D" uid="uid://gunucde6woem" path="res://assets/sprites/32x32px/12.png" id="4_1cfmv"]
+[ext_resource type="Texture2D" uid="uid://cvy5d8e8wyg8" path="res://assets/sprites/32x32px/13.png" id="5_k76ql"]
+[ext_resource type="Texture2D" uid="uid://dyhssn5470tfs" path="res://assets/sprites/32x32px/31.png" id="6_tamys"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mkf8s"]
+radius = 8.0
+
+[node name="bullet" type="Area2D"]
+z_index = -1
+script = ExtResource("1_y25gk")
+texture_array = Array[Texture2D]([ExtResource("2_tamys"), ExtResource("3_26lx3"), ExtResource("4_1cfmv"), ExtResource("5_k76ql")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_tamys")
+region_rect = Rect2(768, 0, 32, 32)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+rect = Rect2(-8, -8, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mkf8s")
+
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_screen_exited"]

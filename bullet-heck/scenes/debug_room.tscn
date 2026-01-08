@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=4 uid="uid://dn21qxytd6tf7"]
+
+[ext_resource type="PackedScene" uid="uid://b2jpu5e5wn8eb" path="res://scenes/boss_skeleton.tscn" id="1_kxprw"]
+[ext_resource type="PackedScene" uid="uid://b6ure5m8acg3e" path="res://scenes/player.tscn" id="2_aifrh"]
+[ext_resource type="Texture2D" uid="uid://eb0r4efi5031" path="res://assets/battlebg.png" id="3_b6wyt"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b6wyt"]
+texture = ExtResource("3_b6wyt")
+texture_region_size = Vector2i(141, 141)
+0:0/animation_columns = 47
+0:0/animation_speed = 50.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/animation_frame_12/duration = 1.0
+0:0/animation_frame_13/duration = 1.0
+0:0/animation_frame_14/duration = 1.0
+0:0/animation_frame_15/duration = 1.0
+0:0/animation_frame_16/duration = 1.0
+0:0/animation_frame_17/duration = 1.0
+0:0/animation_frame_18/duration = 1.0
+0:0/animation_frame_19/duration = 1.0
+0:0/animation_frame_20/duration = 1.0
+0:0/animation_frame_21/duration = 1.0
+0:0/animation_frame_22/duration = 1.0
+0:0/animation_frame_23/duration = 1.0
+0:0/animation_frame_24/duration = 1.0
+0:0/animation_frame_25/duration = 1.0
+0:0/animation_frame_26/duration = 1.0
+0:0/animation_frame_27/duration = 1.0
+0:0/animation_frame_28/duration = 1.0
+0:0/animation_frame_29/duration = 1.0
+0:0/animation_frame_30/duration = 1.0
+0:0/animation_frame_31/duration = 1.0
+0:0/animation_frame_32/duration = 1.0
+0:0/animation_frame_33/duration = 1.0
+0:0/animation_frame_34/duration = 1.0
+0:0/animation_frame_35/duration = 1.0
+0:0/animation_frame_36/duration = 1.0
+0:0/animation_frame_37/duration = 1.0
+0:0/animation_frame_38/duration = 1.0
+0:0/animation_frame_39/duration = 1.0
+0:0/animation_frame_40/duration = 1.0
+0:0/animation_frame_41/duration = 1.0
+0:0/animation_frame_42/duration = 1.0
+0:0/animation_frame_43/duration = 1.0
+0:0/animation_frame_44/duration = 1.0
+0:0/animation_frame_45/duration = 1.0
+0:0/animation_frame_46/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2v0q5"]
+tile_size = Vector2i(141, 141)
+sources/0 = SubResource("TileSetAtlasSource_b6wyt")
+
+[node name="debugRoom" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("2_aifrh")]
+position = Vector2(164, -2)
+
+[node name="bossSkeleton" parent="." instance=ExtResource("1_kxprw")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_enabled = false
+limit_left = 512
+limit_top = 512
+limit_right = 512
+limit_bottom = 512
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+self_modulate = Color(0.5, 0, 1, 1)
+z_index = -5
+tile_map_data = PackedByteArray("AAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD+////AAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_2v0q5")

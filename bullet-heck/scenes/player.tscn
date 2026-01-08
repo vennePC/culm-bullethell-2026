@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6ure5m8acg3e"]
+
+[ext_resource type="Texture2D" uid="uid://cglhyx8vlfptc" path="res://assets/sprites/icon.svg" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://c18fbinh8pgwo" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://dyhssn5470tfs" path="res://assets/sprites/32x32px/31.png" id="3_qhqgy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
+radius = 7.071068
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -3
+scale = Vector2(0.22031249, 0.22031248)
+texture = ExtResource("1_3vyb7")
+
+[node name="HitboxSprie" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(5.9604645e-08, 5.9604645e-07)
+scale = Vector2(0.4375, 0.43750006)
+texture = ExtResource("3_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qhqgy")
